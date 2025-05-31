@@ -12,3 +12,32 @@
 #     Name="my-first-ec2"
 #   }
 # }
+
+
+
+resource "aws_instance" "myec4" {
+  ami = "ami-00c39f71452c08778"
+  instance_type = "t2.micro"
+  count = 3
+
+    tags={
+    Name="apyment-systems-${count.index}"
+  }
+}
+
+resource "aws_iam_user" "lb" {
+  name = "payments-user-${count.index}"
+  count = 3
+}
+
+variable "users" {
+  type = list
+  default = ["alice","bob","memon"]
+}
+resource "aws_iam_user" "lb" {
+  name = var.users[count.index]
+  count = 3
+}
+
+
+
