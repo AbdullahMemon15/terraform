@@ -15,4 +15,15 @@
 #   default = "21"
 # } 
 
-variable "ami" {description = "this ami is for us-east-1 region"}
+# variable "ami" {description = "this ami is for us-east-1 region"}
+
+# TF_VAR_instance_type 
+# variable "instance_type" {
+#   default = ""
+# }
+
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+
