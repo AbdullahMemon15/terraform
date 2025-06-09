@@ -9,11 +9,11 @@
 
 
 
-variable "my-object" {
-  type = object({Name = string, userID = number})
-}
+# variable "my-object" {
+#   type = object({Name = string, userID = number})
+# }
 
-output "variable_value" {
-  value = var.my-object
-}
+# output "variable_value" {
+#   value = var.my-object
+# }
 
